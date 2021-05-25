@@ -3,6 +3,7 @@ var users;
 getUsers();
 
 $("button[name=posts]").on('click', function(event) {
+	document.getElementById("todos").setAttribute("hidden","");
 	document.getElementById("posts").innerHTML = "";
 	if(event.target.id!="")
 		getPosts(event.target.id);
@@ -23,7 +24,7 @@ $("#AddTarea").on("submit",function(event){
 	tarea["completed"] = event.target[1].checked;
 
 	var idUser = document.getElementsByName("posts")[0].id;
-	if(idUser!="")
+	if(idUser!="" && tarea["title"]!="")
 		addTarea( document.getElementsByName("posts")[0].id , tarea);
 
 	return false;
@@ -31,19 +32,22 @@ $("#AddTarea").on("submit",function(event){
 
 
 
-function dibujarPosts(postRe,comments){
+function dibujarPost(postId,comments){
+
+	var aux = postT.find(e=>e.id == postId);
 
 	var main = document.createElement("div");
-	main.setAttribute("class", "col-12");
-	main.innerHTML = postRe.title;
-	document.getElementById("posts").appendChild(main);
+	main.setAttribute("class", "col-12 mt-5");
+	main.innerHTML = "<p>"+aux.title+"</p>";
 
 	for(var i=0; i<comments.length;i++){
 		var com = document.createElement("div");
-		com.setAttribute("class", "col-5");
-		com.innerHTML = comments[i].email;
-		document.getElementById("posts").appendChild(main);
+		com.setAttribute("class", "ml-4 mt-2 border shadow rounded");
+		com.innerHTML = comments[i].body;
+		main.appendChild(com);
 	}
+
+	document.getElementById("posts").appendChild(main);
 }
 
 

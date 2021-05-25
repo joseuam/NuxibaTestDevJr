@@ -13,34 +13,36 @@ function getUsers(){
      });    
 }
 
-
+var postT;
+var relaciones = {};
 function getPosts(id){
     $.ajax({
         type : "GET",
         url : "https://jsonplaceholder.typicode.com/users/"+id+"/posts",
         success : function(postRe) {
-
-            
-            for(i = 0; i<postRe.length; i++){
-                var j = i;
-                console.log(postRe[j].id);
-                console.log(j);
-                $.ajax({
-                    type : "GET",
-                    url : "https://jsonplaceholder.typicode.com/post/"+postRe[j].id+"/comments",
-                    success: function(comments){
-                  
-                        dibujarPosts(postRe[j],comments);
-                    }
-                })
-            }
-
-               
+            postT = postRe;
+            getComments(postRe);             
         },
         error: function(e){
             console.log(e);
         }
      });
+}
+
+function getComments(postRe){
+    for(var i=0; i<postRe.length;i++){
+        $.ajax({
+            type : "GET",
+            url : "https://jsonplaceholder.typicode.com/post/"+postRe[i].id+"/comments",
+            success: function(comments){
+                relaciones[ comments[0].postId ] = comments;
+                dibujarPost(comments[0].postId, comments);
+            },
+            error: function(e){
+               console.log(e); 
+            }
+        });
+    }
 }
 
 function getTodos(id){

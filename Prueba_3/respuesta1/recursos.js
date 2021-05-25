@@ -1,4 +1,4 @@
-// Para leer un archivo, la app deberia estar montado en un servidor local. Por lo que se define la variable
+// Para leer un archivo local, la app deberia estar montado en un servidor local. Por lo que se define la variable
 //en el script. 
 //Se resolvieron los problemas que habian en los metodos
 
