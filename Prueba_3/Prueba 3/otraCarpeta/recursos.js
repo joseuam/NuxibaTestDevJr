@@ -6,7 +6,7 @@ function crear(data2){
     console.log(data2);
     var col = 3;
     var filas = 20;
-    var tabla="<table border=\"0\">";
+    var tabla="";
     for(var i=0;i<filas;i++)
     {
         tabla+="<tr>";
@@ -28,7 +28,7 @@ function crear(data2){
         }
         tabla+="</tr>";
     }
-    tabla+="</table>";
+    //tabla+="</table>";
     document.getElementById("root").innerHTML=tabla;
 }
 
