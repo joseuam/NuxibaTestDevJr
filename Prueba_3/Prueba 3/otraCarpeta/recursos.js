@@ -4,31 +4,17 @@
 
 function crear(data2){
     console.log(data2);
-    var col = 3;
-    var filas = 20;
     var tabla="";
-    for(var i=0;i<filas;i++)
+    for(var i=0; i<data2.length; i++)
     {
         tabla+="<tr>";
-        for(j=0;j<col;j++)
-        {
-            if (j == 0)
-            {
-                tabla+="<td>"+"<p>" + data2[i].superhero + "<\p>" + "</td>";
-            }
-            if (j == 1)
-            {
-                tabla+="<td>"+"<p>" + data2[i].publisher + "<\p>"+ "</td>";
-            }
-            if (j == 2)
-            {
-                tabla+="<td>"+"<p>" + data2[i].alter_ego + "<\p>"+ "</td>";
-            }
-            
-        }
+        tabla+="<td>"+"<p>" + data2[i].superhero + "</p>" + "</td>";
+        tabla+="<td>"+"<p>" + data2[i].publisher + "</p>"+ "</td>";
+        tabla+="<td>"+"<p>" + data2[i].alter_ego + "</p>"+ "</td>"; 
+        tabla+="<td>"+"<p>" + data2[i].first_appearance + "</p>"+ "</td>"; 
+        tabla+="<td>"+"<p>" + data2[i].characters + "</p>"+ "</td>";      
         tabla+="</tr>";
     }
-    //tabla+="</table>";
     document.getElementById("root").innerHTML=tabla;
 }
 
