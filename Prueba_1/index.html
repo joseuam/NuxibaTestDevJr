@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="container">
+
+<h2>Users</h2>
+<hr>
+<div class="container">
+  <div class="row" id="users"></div>
+</div>
+
+
+<h2>Info</h2>
+<hr>
+<div class="container">
+  <div class="row">
+
+		<table class="table table-hover" style="height:40%;">
+		  <tbody id="body">
+
+		  </tbody>
+		</table>
+  </div>
+
+	<button class="btn btn-info" name="posts">posts</button>
+	<button class="btn btn-info" name="todos">todos</button>
+
+</div>
+
+<h2>.............</h2>
+<hr>
+
+<div class="container" id="posts"></div>
+
+<div class="container" id="todos" hidden>
+	
+	<div class="row">
+		<div class="col-6" id="uno">
+			
+		</div>
+		<div class="col-6" id="dos">
+
+			<form id="AddTarea" method="POST">
+			  <div class="form-row mb-2">
+			    <label for="title">Tarea</label>
+			    <input type="text" class="form-control" id="title">
+			  </div>
+
+			  <div class="form-row mb-4">
+			    <div class="form-check">
+			      <input class="form-check-input" type="checkbox" id="completed">
+			  
+			    </div>
+			  </div>
+
+			  <div class="form-row">
+			  	<button type="submit" class="btn btn-primary mb-2">Guardar</button>
+			  </div>
+			</form>
+
+		</div>
+		
+	</div>
+
+</div>
+
+
+
+<script src="Servicios/ServiceJSONPlaceholder.js"></script>
+<script src="Controller/main.js"></script>
+
+
+</body>
+</html>
