@@ -7,7 +7,7 @@ function crear(data2){
     var tabla="";
     for(var i=0; i<data2.length; i++)
     {
-        tabla+="<tr>";
+        tabla+='<tr class="filas">';
         tabla+="<td>"+"<p>" + data2[i].superhero + "</p>" + "</td>";
         tabla+="<td>"+"<p>" + data2[i].publisher + "</p>"+ "</td>";
         tabla+="<td>"+"<p>" + data2[i].alter_ego + "</p>"+ "</td>"; 

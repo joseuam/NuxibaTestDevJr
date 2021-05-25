@@ -1,0 +1,31 @@
+thead{
+	background: #47AEC7;
+	
+}
+
+tbody{
+	background: #88CBDC;
+}
+
+td{
+	width: 150px;
+	text-align: center;
+}
+
+table{
+	width: 85%;
+	margin: 0 auto;
+	font-size: 12px;
+}
+
+.filas:nth-child(2n){
+	color: white;
+}
+
+.filas:nth-child(2n+1){
+	color: blue;
+}
+
+tr:hover td { 
+	background: #d0dafd; color: #339; 
+}
